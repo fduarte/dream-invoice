@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+<body>
+    <head>
+        <title></title>
+        <!-- These meta tags come first. -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    </head>
+
+    <div id="main" class="container">
+        <div class="row">
+            <div class="col">
+
+                <h2>Learning Vue.js</h2>
+
+                <ul>
+                    <li>Using ES6 syntax</li>
+                    <li><strong>Directives: </strong> v-text, v-model, v-for, v-if, v-else, v-show</li>
+                    <li><strong>Event listener example:</strong> <i>@click</i> </li>
+                    <li><strong>Attribute binder example:</strong> <i>v-bind:message or :message</i> </li>
+                    <li><strong>Computed variable:</strong> {{ reversedMessage }}</li>
+                    <li><strong>Components:</strong> to enable custom html tags</li>
+                </ul>
+
+                <div class="card">
+                    <h3 class="card-header">Add Task</h3>
+                    <div class="card-block">
+                        <input class="col-6" id="input-name" class="form-control" type="text" v-model="newTask">
+                        <button type="button" class="btn btn-primary" @click="addTask">Add</button>
+                    </div>
+                </div>
+
+                <!--
+                <card title="Card Tester" body="Body tester"></card>
+                -->
+
+                <div style="padding-top:40px"></div>
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h5>All Tasks</h5>
+                <task-list></task-list>
+            </div>
+            <div class="col">
+                <h5>Completed Tasks</h5>
+                <ul>
+                    <li v-for="task in completeTasks" v-text="task.title"></li>
+                </ul>
+            </div>
+            <div class="col">
+                <h5>Incomplete Tasks</h5>
+                <ul>
+                    <li v-for="task in incompleteTasks" v-text="task.title">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+    <script src="scripts/tasks.js"></script>
+
+</body>
+
+</html>
